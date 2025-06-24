@@ -1,38 +1,307 @@
-.App {
-  text-align: center;
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Utility Classes */
+.grid {
+  display: grid;
+  gap: 1.25rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.p-4 {
+  padding: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Component Styles */
+.input-container {
+  margin-bottom: 1rem;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  border: 1px solid #d1d5db;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.625rem;
+  width: 100%;
+  transition: all 0.2s;
+  font-size: 1rem;
+  background-color: white;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 0.875rem;
+}
+
+/* Button Styles */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+          45deg,
+          #ff0000, #ff7300, #fffb00, #48ff00,
+          #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.button-85:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-85:disabled:before {
+  animation: none;
+  opacity: 0.5;
+}
+
+@keyframes glowing-button-85 {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+
+/* Transform Controls */
+.transform-controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.transform-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.transform-group button {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  background-color: #2563eb;
   color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.transform-group button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Map Container */
+.map-container {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.loading-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.loading-progress {
+  height: 6px;
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 3px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Results Display */
+.path-display {
+  padding: 0.75rem;
+  background-color: #f8fafc;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+}
+
+.distance-display {
+  font-size: 1.125rem;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Error Panel */
+.error-panel {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Selection Info */
+.selection-info {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+}
+
+.selection-info p {
+  margin: 0.25rem 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  body {
+    padding: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+
+  .button-85 {
+    width: auto;
+  }
+
+  .transform-controls {
+    justify-content: flex-start;
+  }
+
+  .selection-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Animation for points */
+@keyframes pulse {
+  0% { r: 3; }
+  50% { r: 4; }
+  100% { r: 3; }
+}
+
+circle {
+  transition: all 0.2s ease;
+}
+
+circle:hover {
+  r: 5;
+}
+
+circle[fill="#10b981"], circle[fill="#ef4444"] {
+  animation: pulse 1.5s infinite;
 }
