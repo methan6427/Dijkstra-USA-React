@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/methan6427/Dijkstra-USA-React/static/css/main.fc82f766.css",
-    "main.js": "/methan6427/Dijkstra-USA-React/static/js/main.a2dc452d.js",
-    "static/js/453.ac373c22.chunk.js": "/methan6427/Dijkstra-USA-React/static/js/453.ac373c22.chunk.js",
-    "index.html": "/methan6427/Dijkstra-USA-React/index.html",
-    "main.fc82f766.css.map": "/methan6427/Dijkstra-USA-React/static/css/main.fc82f766.css.map",
-    "main.a2dc452d.js.map": "/methan6427/Dijkstra-USA-React/static/js/main.a2dc452d.js.map",
-    "453.ac373c22.chunk.js.map": "/methan6427/Dijkstra-USA-React/static/js/453.ac373c22.chunk.js.map"
+    "main.css": "/Dijkstra-USA-React/static/css/main.fc82f766.css",
+    "main.js": "/Dijkstra-USA-React/static/js/main.1924000c.js",
+    "static/js/453.ac373c22.chunk.js": "/Dijkstra-USA-React/static/js/453.ac373c22.chunk.js",
+    "index.html": "/Dijkstra-USA-React/index.html",
+    "main.fc82f766.css.map": "/Dijkstra-USA-React/static/css/main.fc82f766.css.map",
+    "main.1924000c.js.map": "/Dijkstra-USA-React/static/js/main.1924000c.js.map",
+    "453.ac373c22.chunk.js.map": "/Dijkstra-USA-React/static/js/453.ac373c22.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc82f766.css",
-    "static/js/main.a2dc452d.js"
+    "static/js/main.1924000c.js"
   ]
 }
