@@ -193,7 +193,7 @@ function DijkstraMapApp() {
   useEffect(() => {
     const loadMapData = async () => {
       try {
-        const response = await fetch('/usa.txt');
+        const response = await fetch(`${process.env.PUBLIC_URL}/usa.txt`);
         if (!response.ok) throw new Error('Failed to load map data');
         const text = await response.text();
         const lines = text.trim().split('\n');
@@ -373,7 +373,7 @@ function DijkstraMapApp() {
 
         <div className="map-container">
           <svg width="100%" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" style={{ background: '#f8fafc' }}>
-            <image href="/map.svg" x="-95" y="28" width="960" height="500" opacity="0.3"/>
+            <image href={`${process.env.PUBLIC_URL}/map.svg`} x="-95" y="28" width="960" height="500" opacity="0.3"/>
             {renderVertices}
             {renderPath}
           </svg>
